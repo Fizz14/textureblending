@@ -23,39 +23,39 @@ SDL_Texture* MaskTexture(SDL_Renderer* renderer, SDL_Texture* &mask, SDL_Texture
 }
 
 int main() {
-    SDL_Init(SDL_INIT_VIDEO);
+	SDL_Init(SDL_INIT_VIDEO);
 
-    SDL_Window* window = SDL_CreateWindow("Texture Blending",
+    	SDL_Window* window = SDL_CreateWindow("Texture Blending",
 	SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 300, 300, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_ACCELERATED);
 	
-    SDL_Surface* SurfaceA = IMG_Load("a.png");
+    	SDL_Surface* SurfaceA = IMG_Load("a.png");
 	SDL_Surface* SurfaceB = IMG_Load(a.png");
 	
 	SDL_Texture* TextureA = SDL_CreateTextureFromSurface(renderer, SurfaceA);
 	SDL_Texture* TextureB = SDL_CreateTextureFromSurface(renderer, SurfaceB);
 	
-    SDL_Texture* TextureC = MaskTexture(renderer, TextureA, TextureB);
+    	SDL_Texture* TextureC = MaskTexture(renderer, TextureA, TextureB);
 
-    SDL_Surface* SurfaceD = IMG_Load("test1.png");
-    SDL_Texture* TextureD = SDL_CreateTextureFromSurface(renderer, SurfaceD);
+    	SDL_Surface* SurfaceD = IMG_Load("test1.png");
+    	SDL_Texture* TextureD = SDL_CreateTextureFromSurface(renderer, SurfaceD);
 
 	SDL_RenderCopy(renderer, TextureD, NULL, NULL);
 	SDL_RenderCopy(renderer, TextureC, NULL, NULL);
 	
 	SDL_RenderPresent(renderer);
 
-    bool quit = false;
-    SDL_Event event;
-    while (!quit) { 
+    	bool quit = false;
+   	 SDL_Event event;
+    	while (!quit) { 
 		SDL_PollEvent(&event);
-        while( SDL_PollEvent( &event ) ){
-            switch(event.type) {
-                case SDL_QUIT:
-                    quit = 1;
-                    break;
-            }
-        }
+      		while( SDL_PollEvent( &event ) ){
+           	switch(event.type) {
+                	case SDL_QUIT:
+                    	quit = 1;
+                    	break;
+            		}
+        	}
 		SDL_Delay(100);
 	}
 	SDL_FreeSurface(SurfaceA);
