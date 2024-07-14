@@ -30,7 +30,7 @@ int main() {
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_ACCELERATED);
 	
     	SDL_Surface* SurfaceA = IMG_Load("a.png");
-	SDL_Surface* SurfaceB = IMG_Load(a.png");
+	SDL_Surface* SurfaceB = IMG_Load("a.png");
 	
 	SDL_Texture* TextureA = SDL_CreateTextureFromSurface(renderer, SurfaceA);
 	SDL_Texture* TextureB = SDL_CreateTextureFromSurface(renderer, SurfaceB);
